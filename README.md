@@ -3,6 +3,7 @@
 1.First step :install godef and gocode using below commands:
 
   go get github.com/rogpeppe/godef
+  
   go get github.com/nsf/gocode
   
 2.Then put the init.el file into your ~/.emacs.d/ directory;
