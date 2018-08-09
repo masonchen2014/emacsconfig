@@ -1,7 +1,8 @@
-(package-initialize)
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(package-initialize)
 
 ;;load package specified by package-name and if not exist intall it.
 (defun load-package-hard (package-name)
@@ -9,9 +10,9 @@
     (if (not (package-installed-p package-name))
       (progn 
 	;;This informs Emacs about the latest versions of all packages, and makes them available for download.
-	(package-refresh-contents)
-	(package-install package-name)
-	))
+	(when (not package-archive-contents)
+	  (package-refresh-contents))
+	(package-install package-name)))
   (require package-name)))
 
 
