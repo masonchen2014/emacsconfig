@@ -3,6 +3,7 @@
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
+(setq inhibit-startup-message t)
 
 ;;load package specified by package-name and if not exist intall it.
 (defun load-package-hard (package-name)
